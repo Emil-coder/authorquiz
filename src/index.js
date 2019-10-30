@@ -20,7 +20,7 @@ const authors = [
   },
   {
     name: 'J.K Rowling',
-    imageUrl: 'images/authors/jkrowling.png',
+    imageUrl: 'images/authors/jkrowling.jpg',
     imageSource: 'Wikimedia Commons',
     books: ['Harry Potter and the Sorcerer\'s Stone']
   },
@@ -51,12 +51,17 @@ function getTurnData(authors) {
 
   const fourRandomBooks = shuffle(allBooks).slice(0, 4);
   const answer = sample(fourRandomBooks);
+  const author =
+    authors.find((author) =>
+      author.books.some((title) =>
+        title === answer));
+
   console.log('answer:' + answer);
+  console.log('author:' + author.name);
 
   return {
     books: fourRandomBooks,
-    author: authors.find((author) =>
-      author.books.some((title) => title === answer))
+    author: author
   }
 }
 
