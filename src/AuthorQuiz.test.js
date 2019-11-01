@@ -60,7 +60,7 @@ describe("Author Quiz", () => {
       );
     });
 
-    it('should have a red background color', () => {
+    it('should have a green background color', () => {
       expect(wrapper.find("div.row.turn").props().style.backgroundColor).toBe('green');
     });
 
