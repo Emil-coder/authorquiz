@@ -81,6 +81,10 @@ describe("Author Quiz", () => {
       expect(handleAnswerSelected).toHaveBeenCalled();
     });
 
+    it("should receive The Shining", () => {
+      expect(handleAnswerSelected).toHaveBeenCalledWith("The Shining");
+    });
+
   });
 
 });
